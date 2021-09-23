@@ -9,13 +9,14 @@ footer {
   align-items: start;
 }
 
-.footer__logo {
-  color: #ffffff;
-  margin-bottom: 20px;
-}
 .footer__logo-part {
   width: 231px;
   margin-right: 70px;
+}
+
+.footer__logo {
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
 %footer-link {
@@ -63,11 +64,9 @@ footer {
   color: #ffffff;
 }
 
-.footer__socials {
-  .socials__link {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+.footer__social-link {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer__form {
