@@ -1,50 +1,51 @@
-.portfolio.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.radiobutton-list {
+.portfolio__radiobutton-list {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+
+  .list-item:not(:last-child) {
+    margin-right: 8px;
+  }
 }
 
-.radiobutton-list .list-item:not(:last-child) {
-  margin-right: 8px;
+.portfolio__item {
+  @include grid__item(3);
 }
 
-.portfolio-list .title {
+.portfolio__title {
+  margin-top: 0;
+  margin-bottom: 4px;
+
   color: $title-text-color;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  margin-top: 0;
-  margin-bottom: 4px;
 }
 
-.portfolio-list .project-kind {
+.portfolio__project-kind {
+  margin-top: 0;
+  margin-bottom: 0;
+
   color: $primary-text-color;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
-.project-wrap {
+.portfolio__project-wrap {
   position: relative;
   overflow: hidden;
 }
 
-.project-image {
+.portfolio__project-image {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.project-description {
+.portfolio__project-description {
   position: absolute;
   top: 0;
   left: 0;
@@ -66,42 +67,29 @@
   opacity: 0;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .portfolio__link:hover &,
+  .portfolio__link:focus & {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
-.project-name {
+.portfolio__project-name {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
 }
 
-.portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: -30px;
-  margin-left: -30px;
-}
-
-.portfolio-list .list-item {
-  flex-basis: calc(100% / 3 - 30px);
-  margin-top: 30px;
-  margin-left: 30px;
-}
-
-.portfolio-list .link {
+.portfolio__link {
   display: block;
   width: 100%;
   height: 100%;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.portfolio-list .link:hover,
-.portfolio-list .link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.portfolio-list .link:hover .project-description,
-.portfolio-list .link:focus .project-description {
-  transform: translateY(0%);
-  opacity: 1;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
 }

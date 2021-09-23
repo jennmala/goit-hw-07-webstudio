@@ -1,11 +1,5 @@
-.clients {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.clients__list {
-  display: flex;
-  justify-content: space-between;
+.clients__item {
+  @include grid__item(6);
 }
 
 .clients__link {

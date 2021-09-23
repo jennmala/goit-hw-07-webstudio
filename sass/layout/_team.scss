@@ -1,18 +1,9 @@
 .team {
-  padding-top: 94px;
-  padding-bottom: 94px;
-
   background-color: $secondary-background-color;
 }
 
-.team__list {
-  display: flex;
-  margin-left: -30px;
-}
-
 .team__item {
-  flex-basis: calc(100% / 4 - 30px);
-  margin-left: 30px;
+  @include grid__item(4);
 
   background-color: $primary-background-color;
   border-radius: 0px 0px 4px 4px;

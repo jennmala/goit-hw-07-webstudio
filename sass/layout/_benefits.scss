@@ -1,15 +1,6 @@
-.benefits {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-.benefits__list {
-  display: flex;
-  margin-left: -30px;
-}
-
 .benefits__item {
-  flex-basis: calc(100% / 4 - 30px);
-  margin-left: 30px;
+  @include grid__item(4);
+  max-width: 270px;
 }
 
 .benefits__title {

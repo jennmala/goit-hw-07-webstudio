@@ -44,6 +44,13 @@ body {
   clip: rect(0 0 0 0);
 }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
 .button {
   margin: 0 auto;
   display: flex;
@@ -112,6 +119,11 @@ body {
 
 .logo span {
   color: #2196f3;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 header {
@@ -217,19 +229,11 @@ header {
   text-transform: uppercase;
 }
 
-.benefits {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.benefits__list {
-  display: flex;
-  margin-left: -30px;
-}
-
 .benefits__item {
-  flex-basis: calc(100% / 4 - 30px);
+  flex-basis: calc(100% / $num-of-items-in-row - 30px);
+  margin-top: 30px;
   margin-left: 30px;
+  max-width: 270px;
 }
 
 .benefits__title {
@@ -264,7 +268,7 @@ header {
 }
 
 .services {
-  padding-bottom: 94px;
+  padding-top: 0;
 }
 
 .services__wrap {
@@ -293,9 +297,10 @@ header {
   background-color: rgba(47, 48, 58, 0.8);
 }
 
-.services__list {
-  display: flex;
-  justify-content: space-between;
+.services__item {
+  flex-basis: calc(100% / $num-of-items-in-row - 30px);
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 .socials__link {
@@ -330,18 +335,12 @@ header {
 }
 
 .team {
-  padding-top: 94px;
-  padding-bottom: 94px;
   background-color: #f5f4fa;
 }
 
-.team__list {
-  display: flex;
-  margin-left: -30px;
-}
-
 .team__item {
-  flex-basis: calc(100% / 4 - 30px);
+  flex-basis: calc(100% / $num-of-items-in-row - 30px);
+  margin-top: 30px;
   margin-left: 30px;
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px;
@@ -373,14 +372,10 @@ header {
   letter-spacing: 0.03em;
 }
 
-.clients {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.clients__list {
-  display: flex;
-  justify-content: space-between;
+.clients__item {
+  flex-basis: calc(100% / $num-of-items-in-row - 30px);
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 .clients__link {
@@ -683,53 +678,54 @@ footer {
   border-color: transparent;
 }
 
-.portfolio.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.radiobutton-list {
+.portfolio__radiobutton-list {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
 }
 
-.radiobutton-list .list-item:not(:last-child) {
+.portfolio__radiobutton-list .list-item:not(:last-child) {
   margin-right: 8px;
 }
 
-.portfolio-list .title {
+.portfolio__item {
+  flex-basis: calc(100% / $num-of-items-in-row - 30px);
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.portfolio__title {
+  margin-top: 0;
+  margin-bottom: 4px;
   color: #212121;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  margin-top: 0;
-  margin-bottom: 4px;
 }
 
-.portfolio-list .project-kind {
+.portfolio__project-kind {
+  margin-top: 0;
+  margin-bottom: 0;
   color: #757575;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
-.project-wrap {
+.portfolio__project-wrap {
   position: relative;
   overflow: hidden;
 }
 
-.project-image {
+.portfolio__project-image {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.project-description {
+.portfolio__project-description {
   position: absolute;
   top: 0;
   left: 0;
@@ -750,40 +746,26 @@ footer {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-name {
+.portfolio__link:hover .portfolio__project-description,
+.portfolio__link:focus .portfolio__project-description {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.portfolio__project-name {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
 }
 
-.portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: -30px;
-  margin-left: -30px;
-}
-
-.portfolio-list .list-item {
-  flex-basis: calc(100% / 3 - 30px);
-  margin-top: 30px;
-  margin-left: 30px;
-}
-
-.portfolio-list .link {
+.portfolio__link {
   display: block;
   width: 100%;
   height: 100%;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-list .link:hover,
-.portfolio-list .link:focus {
+.portfolio__link:hover, .portfolio__link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.portfolio-list .link:hover .project-description,
-.portfolio-list .link:focus .project-description {
-  transform: translateY(0%);
-  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */
